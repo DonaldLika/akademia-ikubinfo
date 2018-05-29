@@ -1,0 +1,23 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence"
+	version="1.0">
+	<persistence-unit name="JPATest" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>com.ikubinfo.model.one2many.User</class>
+		<class>com.ikubinfo.model.one2many.Role</class>
+		<class>com.ikubinfo.model.one2one.Student</class>
+		<class>com.ikubinfo.model.one2one.StudentCard</class>
+		<class>com.ikubinfo.model.many2many.Post</class>
+		<class>com.ikubinfo.model.many2many.Tag</class>
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
+			<property name="hibernate.connection.username" value="root" />
+			<property name="hibernate.connection.password" value="root" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.connection.url" value="jdbc:mysql://localhost/akademia" />
+		</properties>
+	</persistence-unit>
+</persistence>
